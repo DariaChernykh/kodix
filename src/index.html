@@ -1,12 +1,141 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
-    <title>Webpack starter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap&subset=cyrillic" rel="stylesheet">
+    <title>Captain Quack</title>
 </head>
 <body>
+    <header class="header">
+        <img src="./images/logo.png" alt="captain-quack-logo" class="header__logo">
+    </header>
+
+    <div class="content">
+        <h1 class="content__title">¡Ay caramba!</h1>
+        <section class="filters">
+            <form method="get" class="filters__form">
+                <div class="filters__field">
+                    <label class="filters__label" for="name_input">Название</label>
+                    <input class="filters__input" type="text" placeholder="Название" id="name_input">
+                </div>
+                <div class="filters__field filters__field_year">
+                    <label class="filters__label" for="year_input">Год</label>
+                    <input class="filters__input" type="number" min="1800" max="2020" step="1" value="2019" placeholder="Год" id="year_input">
+                </div>
+                <div class="filters__field filters__field_price">
+                    <label class="filters__label" for="price_input">Цена</label>
+                    <input class="filters__input" type="number" placeholder="Цена" id="price_input">
+                </div>
+                <div class="filters__field filters__field_desc">
+                    <label class="filters__label" for="desc_input">Описание</label>
+                    <input class="filters__input" type="text" placeholder="Описание" id="desc_input">
+                </div>
+
+                <div class="filters__field filters__field_top-indent filters__colors-inner">
+                    <h3 class="filters__colors-title">Цвет</h3>
+                    <div class="filters__colors-wrap">
+                        <input
+                            type="radio"
+                            id="color-white"
+                            class="filters__color-input filters__color-input--white"
+                            name="color"
+                            value="yellow"
+                            checked
+                        />
+                        <label
+                            for="color-white"
+                            class="filters__color filters__color_white"
+                        >white</label
+                        >
+                        <input
+                            type="radio"
+                            id="color-black"
+                            class="filters__color-input filters__color-input--black"
+                            name="color"
+                            value="black"
+                        />
+                        <label
+                            for="color-black"
+                            class="filters__color filters__color_black"
+                        >black</label
+                        >
+                        <input
+                            type="radio"
+                            id="color-grey"
+                            class="filters__color-input filters__color-input--grey"
+                            name="color"
+                            value="grey"
+                        />
+                        <label
+                            for="color-grey"
+                            class="filters__color filters__color_grey"
+                        >grey</label
+                        >
+                        <input
+                            type="radio"
+                            id="color-red"
+                            class="filters__color-input filters__color-input--red"
+                            name="color"
+                            value="red"
+                        />
+                        <label
+                            for="color-red"
+                            class="filters__color filters__color_red"
+                        >red</label
+                        >
+                        <input
+                            type="radio"
+                            id="color-green"
+                            class="filters__color-input filters__color-input--green"
+                            name="color"
+                            value="green"
+                        />
+                        <label
+                            for="color-green"
+                            class="filters__color filters__color_green"
+                        >green</label
+                        >
+                    </div>
+                </div>
+
+                <div class="filters__field filters__field_top-indent filters__field_select">
+                    <label>
+                        <select>
+                            <option value="" selected>Статус</option>
+                            <option value="in_stock">В наличии</option>
+                            <option value="pednding">Ожидается</option>
+                            <option value="out_of_stock">Нет в наличии</option>
+                        </select>
+                    </label>
+                    <div class="filters__field_select-arrow"></div>
+                </div>
+                <div class="filters__field filters__field_top-indent">
+                    <button class=" filters__button" type="submit">
+                        Отправить
+                        <img class="filters__button-icon" src="images/angle-right-solid.svg" width="8" height="16" alt="arrow-right">
+                    </button>
+                </div>
+            </form>
+        </section>
+        <section class="results">
+            <h2 class="results__title">Автомобили в наличии</h2>
+            <div class="results__block">
+                <div class="results__item results__header-row">
+                    <div class="results__header-cell">Название</div>
+                    <div class="results__header-cell">Год</div>
+                    <div class="results__header-cell">Цвет</div>
+                    <div class="results__header-cell">Статус</div>
+                    <div class="results__header-cell">Цена</div>
+                    <div class="results__header-cell"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <span class="footer__text">© 2015 CAPTAIN QUACK<br>Десница тысячелетия и моллюск!</span>
+    </footer>
 </body>
 </html>
