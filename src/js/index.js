@@ -1,6 +1,7 @@
 import axios from 'axios';
 import 'babel-polyfill';
 import './../sass/styles.scss';
+import localData from '../data'
 
 const blockContainer = document.querySelector('.results__block');
 
@@ -20,7 +21,15 @@ const getData = () => {
 };
 
 getData().then((response) => {
-  const items = response.data.map((value) => {
+  fillContent(response.data)
+
+}).catch((err) => {
+  fillContent(localData);
+  throw err;
+});
+
+const fillContent = (data) => {
+  const items = data.map((value) => {
     return `<div class="results__item">
                     <div class="results__item-cell results__item-title">${value.title}
                       <div class="results__item-desc results__item-desc_inner">${value.description}</div> 
@@ -60,6 +69,4 @@ getData().then((response) => {
       toggleLableVisability(evt.target);
     })
   });
-
-}).catch((err) => {throw err;});
-
+};
